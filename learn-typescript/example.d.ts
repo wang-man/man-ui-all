@@ -1,0 +1,1 @@
+declare const exam: (selector: string) => string
