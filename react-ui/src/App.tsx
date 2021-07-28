@@ -1,12 +1,12 @@
 import * as React from 'react';
-import Button, {ButtonType, ButtonSize} from './components/Button/button';
+import Button, { ButtonType, ButtonSize } from './components/Button/button';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
-
+import SubMenu from './components/Menu/subMenu';
 
 class App extends React.Component {
 
-  public menuSelect = (index: number) =>{
+  public menuSelect = (index: string) => {
     console.log('选择了菜单项: ', index)
   }
 
@@ -15,16 +15,31 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <Button autoFocus={true}>Hello</Button>
-          <Button btnType={ButtonType.Primary} size={ButtonSize.Large} onClick={(e: any)=>{e.preventDefault();alert(123)}}>Hello</Button>
+          <Button btnType={ButtonType.Primary} size={ButtonSize.Large} onClick={(e: any) => { e.preventDefault(); alert(123) }}>Hello</Button>
           <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>Hello</Button>
           <Button disabled={true} btnType={ButtonType.Danger} size={ButtonSize.Small}>Hello</Button>
           <Button btnType={ButtonType.Link} href='http://baidu.com'>Hello</Button>
           <Button btnType={ButtonType.Link} href='http://baidu.com' disabled={true}>Hello</Button>
-          <hr/>
+          <hr />
 
-          <Menu onSelect={this.menuSelect}>
-            <MenuItem index={0}>hiuhiiu</MenuItem>
-            <MenuItem index={1}>hiuhiiu</MenuItem>
+          <Menu onSelect={this.menuSelect} mode='vertical'>
+            <MenuItem>hiuhiiu</MenuItem>
+            <MenuItem>hiuhiiu</MenuItem>
+            <SubMenu title='子menu'>
+              <MenuItem>huukhihkjhkl</MenuItem>
+              <MenuItem>btgbjhnj</MenuItem>
+            </SubMenu>
+            <MenuItem>hiuhiiu</MenuItem>
+          </Menu>
+
+          <Menu onSelect={this.menuSelect} mode='horizontal'>
+            <MenuItem>hiuhiiu</MenuItem>
+            <MenuItem>hiuhiiu</MenuItem>
+            <SubMenu title='子menu'>
+              <MenuItem>huukhihkjhkl</MenuItem>
+              <MenuItem>btgbjhnj</MenuItem>
+            </SubMenu>
+            <MenuItem>hiuhiiu</MenuItem>
           </Menu>
         </header>
         <p className="App-intro">

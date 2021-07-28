@@ -24,11 +24,11 @@ interface BaseButtonProps {
   href?: string
 }
 
-type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>  // 与button元素原生属性组合
-type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>  // 与a元素原生属性组合
-export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>      // 类型别名，交叉类型
+type ButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>  // 与button元素原生属性组合
+type AnchorProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>  // 与a元素原生属性组合
+export type CombineButtonProps = Partial<ButtonProps & AnchorProps>      // 类型别名，交叉类型
 
-const Button: React.FC<ButtonProps> = props => {
+const Button: React.FC<CombineButtonProps> = props => {
   const {
     btnType,
     className,
