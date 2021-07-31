@@ -1,31 +1,32 @@
 // config
-@import "./variable";     // 导入带下划线_的sass文件被解析为代码块，并不是导入了文件
+@import "./variable"; // 导入带下划线_的sass文件被解析为代码块，并不是导入了文件
 
 //layout
 @import "./reboot";
 
-a{
+a {
   color: #333;
+
   &:hover {
     color: #f50;
   }
 }
 
-// //mixin
+//mixin
 @import "./mixin";
 
-// // animation
-// @import "animation";
-// // button
+// transition
+@import "../components/Transition/transition";
+// button
 
-@import "../components/Button/style";  // 导入的button的样式文件也是带下划线的，这些样式都变成块进入本scss文件
+@import "../components/Button/style"; // 导入的button的样式文件也是带下划线的，这些样式都变成块进入本scss文件
 
-// // menu
+// menu
 
 @import "../components/Menu/style";
 
-// // icon
-// @import "../components/Icon/style";
+// icon
+@import "../components/Icon/style";
 
 // //input
 // @import "../components/Input/style";

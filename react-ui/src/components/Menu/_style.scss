@@ -41,32 +41,33 @@
       align-items: center;
     }
 
-    .arrow-icon {
+    .chevron-icon {
       transition: transform .25s ease-in-out;
       margin-left: 3px;
+      margin-top: 3px;
     }
 
     &:hover {
-      .arrow-icon {
+      .chevron-icon {
         transform: rotate(180deg);
       }
     }
   }
 
   .is-vertical {
-    .arrow-icon {
+    .chevron-icon {
       transform: rotate(0deg) !important;
     }
   }
 
   .is-vertical.is-opened {
-    .arrow-icon {
+    .chevron-icon {
       transform: rotate(180deg) !important;
     }
   }
 
   .man-submenu {
-    display: none;
+    // display: none;
     list-style: none;
     padding-left: 0;
     white-space: nowrap;
@@ -86,7 +87,51 @@
   }
 
   .man-submenu.menu-opened {
-    display: block;
+    // display: block;
+  }
+
+
+  /*入场动画开始*/
+  .fade-enter {
+    opacity: 0;
+  }
+
+  /*入场动画过程*/
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+  }
+
+  /*入场动画结束*/
+  .fade-enter-done {
+    opacity: 1;
+  }
+
+  /*离场动画开始*/
+  .fade-exit {
+    opacity: 1;
+  }
+
+  /*离场动画过程*/
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+  }
+
+  /*离场动画结束*/
+  .fade-exit-done {
+    opacity: 0;
+  }
+
+  /*页面第一次加载时的开始状态*/
+  .fade-appear {
+    opacity: 0;
+  }
+
+  /*页面第一次加载时的动画过程*/
+  .fade-appear-active {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
   }
 }
 

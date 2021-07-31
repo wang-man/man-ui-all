@@ -2,18 +2,9 @@
 import * as React from 'react';
 import classnames from 'classnames'
 
-export enum ButtonSize {
-  Large = 'lg',
-  Small = 'sm'
-}
+export type ButtonSize = 'lg' | 'sm'
 
-export enum ButtonType {
-  Primary = 'primary',
-  Default = 'default',
-  Danger = 'danger',
-  Link = 'link',
-  Href = 'href'
-}
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'href'
 
 interface BaseButtonProps {
   className?: string,
@@ -42,10 +33,10 @@ const Button: React.FC<CombineButtonProps> = props => {
   const classes = classnames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
-    'disabled': (btnType === ButtonType.Link) && disabled   // 为a标签的时候才给设置这个class，因为本身button标签有disabled这个属性
+    'disabled': (btnType === 'link') && disabled   // 为a标签的时候才给设置这个class，因为本身button标签有disabled这个属性
   })
 
-  if (btnType === ButtonType.Link) {
+  if (btnType === 'link') {
     return (
       <a href={href} className={classes} {...resetProps}>{children}</a>
     )
@@ -59,7 +50,7 @@ const Button: React.FC<CombineButtonProps> = props => {
 // 默认属性
 Button.defaultProps = {
   disabled: false,
-  btnType: ButtonType.Default     // 默认为default类型
+  btnType: 'default'     // 默认为default类型
 }
 
 export default Button
