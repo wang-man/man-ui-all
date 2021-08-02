@@ -55,14 +55,14 @@
 }
 
 .btn-link {
-  color: $btn-link-color;
+  color: $btn-link-color !important;
   box-shadow: none;
-  text-decoration: $link-decoration;
+  text-decoration: $link-decoration !important;
 
   &:hover,
   &:focus {
-    color: $btn-link-hover-color;
-    text-decoration: $link-hover-decoration;
+    color: $btn-link-hover-color !important;
+    text-decoration: $link-hover-decoration !important;
   }
 
   &.disabled,

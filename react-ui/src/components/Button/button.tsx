@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 export type ButtonSize = 'lg' | 'sm'
 
-export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'href'
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 
 interface BaseButtonProps {
   className?: string,
