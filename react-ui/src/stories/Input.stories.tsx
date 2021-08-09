@@ -17,7 +17,7 @@ const ControlInput = () => {
 }
 
 
-const changeHandle = (e) => {
+const changeHandle = (e: ChangeEvent<HTMLInputElement>) => {
   console.log(e.target.value)
 }
 
