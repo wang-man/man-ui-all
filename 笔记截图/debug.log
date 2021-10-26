@@ -1,0 +1,5 @@
+[1026/163315.583:INFO:crash_reporting.cc(219)] Crash reporting enabled for process: browser
+[1026/163315.638:INFO:gpu_process_host.cc(941)] [XWEB_LOG_GPU]  GPU process laucnched multi-process mode SUCCESS!!! gpu-process-pid:6760 gpu-process-sandbox:1
+[1026/163315.659:INFO:crash_reporting.cc(219)] Crash reporting enabled for process: gpu-process
+[1026/163315.748:INFO:crash_reporting.cc(219)] Crash reporting enabled for process: utility
+[1026/163515.675:INFO:crash_reporting.cc(219)] Crash reporting enabled for process: gpu-process

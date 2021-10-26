@@ -4,7 +4,7 @@ import { useState, createContext } from 'react';
 import { MenuItemProps } from './menuItem'
 type MenuMode = 'horizontal' | 'vertical';
 
-interface MenuProps {
+export interface MenuProps {
   defaultIndex?: string;
   className?: string;
   mode?: MenuMode;

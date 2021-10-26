@@ -8,6 +8,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@types/classnames": "^2.2.10",
     "@types/react-transition-group": "^4.4.2",
+    "axios": "^0.24.0",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -16,11 +17,14 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
+    "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "clean": "rimraf ./build",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./build/index.css"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -34,6 +38,7 @@
     "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.2.2",
     "node-sass": "^4.14.1",
+    "rimraf": "^3.0.2",
     "sass-loader": "^7.3.1",
     "typescript": "^3.8.3"
   }
