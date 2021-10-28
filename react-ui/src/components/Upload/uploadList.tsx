@@ -14,10 +14,10 @@ export const UploadList: FC<UploadListProps> = (props) => {
   } = props
 
   return (
-    <ul className="viking-upload-list">
+    <ul className="man-upload-list">
       {fileList.map(item => {
         return (
-          <li className="viking-upload-list-item" key={item.uid}>
+          <li className="man-upload-list-item" key={item.uid}>
             <span className={`file-name file-name-${item.status}`}>
               <Icon icon="file-alt" theme="secondary" />
               {item.name}
@@ -28,10 +28,10 @@ export const UploadList: FC<UploadListProps> = (props) => {
               {item.status === 'error' && <Icon icon="times-circle" theme="danger" />}
             </span>
             <span className="file-actions">
-              <Icon icon="times" onClick={() => { onRemove(item)}}/>
+              <Icon icon="times" onClick={() => { onRemove(item) }} />
             </span>
-            {item.status === 'uploading' && 
-              <Progress 
+            {item.status === 'uploading' &&
+              <Progress
                 percent={item.percent || 0}
               />
             }

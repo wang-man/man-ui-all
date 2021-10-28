@@ -7,8 +7,8 @@ interface DraggerProps {
 
 export const Dragger: FC<DraggerProps> = (props) => {
   const { onFile, children } = props
-  const [ dragOver, setDragOver ] = useState(false)
-  const klass = classNames('viking-uploader-dragger', {
+  const [dragOver, setDragOver] = useState(false)
+  const klass = classNames('man-uploader-dragger', {
     'is-dragover': dragOver
   })
   const handleDrop = (e: DragEvent<HTMLElement>) => {
@@ -21,10 +21,10 @@ export const Dragger: FC<DraggerProps> = (props) => {
     setDragOver(over)
   }
   return (
-    <div 
+    <div
       className={klass}
-      onDragOver={e => { handleDrag(e, true)}}
-      onDragLeave={e => { handleDrag(e, false)}}
+      onDragOver={e => { handleDrag(e, true) }}
+      onDragLeave={e => { handleDrag(e, false) }}
       onDrop={handleDrop}
     >
       {children}
