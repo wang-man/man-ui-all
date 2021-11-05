@@ -5,11 +5,11 @@ import Transition from './components/Transition/transition';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-library.add(fas)
 
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
 import SubMenu from './components/Menu/subMenu';
+library.add(fas)
 const App: React.FC = () => {
 
   const menuSelect = (index: string) => {

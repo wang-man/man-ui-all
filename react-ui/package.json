@@ -1,22 +1,65 @@
 {
   "name": "man-ui",
   "version": "0.1.0",
-  "private": true,
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "types": "build/index.d.ts",
+  "private": false,
+  "main": "es/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "description": "React Component library",
+  "author": "man",
+  "license": "MIT",
+  "keywords": [
+    "React",
+    "UI",
+    "Design"
+  ],
+  "homepage": "https://github.com/wang-man/man-ui/tree/master/react-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wang-man/man-ui/tree/master/react-ui"
+  },
+  "files": [
+    "es"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@types/classnames": "^2.2.10",
-    "@types/react-transition-group": "^4.4.2",
     "axios": "^0.24.0",
     "classnames": "^2.2.6",
+    "react-transition-group": "^4.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/react": "^6.3.6",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.5",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-transition-group": "^4.4.2",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "7.30.0",
+    "eslint-plugin-react": "^7.26.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts-ts": "3.1.0",
-    "react-transition-group": "^4.4.2"
+    "rimraf": "^3.0.2",
+    "sass-loader": "^7.3.1",
+    "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -25,24 +68,11 @@
     "eject": "react-scripts-ts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "clean": "rimraf ./build",
+    "eslint:init": "eslint --init",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "clean": "rimraf ./es",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./build/index.css"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@storybook/addon-actions": "^6.3.6",
-    "@storybook/addon-essentials": "^6.3.6",
-    "@storybook/addon-links": "^6.3.6",
-    "@storybook/react": "^6.3.6",
-    "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.5",
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
-    "babel-loader": "^8.2.2",
-    "node-sass": "^4.14.1",
-    "rimraf": "^3.0.2",
-    "sass-loader": "^7.3.1",
-    "typescript": "^3.8.3"
+    "build-css": "node-sass ./src/styles/index.scss ./es/index.css",
+    "prepublish": "npm run eslint && npm run build"
   }
 }
